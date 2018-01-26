@@ -1,6 +1,12 @@
 
 pipeline {
     agent any
+    parameters {
+        string(defaultValue: 'master', description: 'branch', name: 'branch')
+    }
+    environment {
+        GIT_BRANCH = "${params.branch}"
+    }
 
     stages {
         stage('Build') {
