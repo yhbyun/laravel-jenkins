@@ -34,6 +34,12 @@ pipeline {
                 sh './docker/build'
             }
         }
+
+        stage('Debug') {
+            steps {
+                sh 'printenv'
+            }
+        }
     }
 
     post {
