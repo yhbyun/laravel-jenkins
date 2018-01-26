@@ -70,6 +70,15 @@ if [ $# -gt 0 ];then
             node \
             npm "$@"
 
+    # If "yarn" is used, run npm
+    # from our node container
+    elif [ "$1" == "yarn" ]; then
+        shift 1
+        $COMPOSE run --rm $TTY \
+            -w /var/www/html \
+            node \
+            yarn "$@"
+
     # If "gulp" is used, run gulp
     # from our node container
     elif [ "$1" == "gulp" ]; then
