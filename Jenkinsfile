@@ -36,7 +36,7 @@ pipeline {
 
         stage('Package') {
             when {
-                GIT_BRANCH 'origin/master'
+                GIT_BRANCH 'master'
             }
             steps {
                 sh './docker/build'
