@@ -4,7 +4,7 @@ services:
     build:
       context: ./docker/app
       dockerfile: Dockerfile
-    image: ecplaza.net/app
+    image: laravel-jenkins.com/app
     volumes:
      - .:/var/www/html
     networks:
@@ -13,7 +13,7 @@ services:
     build:
       context: ./docker/node
       dockerfile: Dockerfile
-    image: ecplaza.net/node
+    image: laravel-jenkins.com/node
     volumes:
      - .:/var/www/html
     networks:
