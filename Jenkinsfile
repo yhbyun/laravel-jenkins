@@ -28,7 +28,7 @@ pipeline {
 
         stage('Package') {
             when {
-                branch 'master'
+                branch 'origin/master'
             }
             steps {
                 sh './docker/build'
