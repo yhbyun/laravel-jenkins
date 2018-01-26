@@ -25,6 +25,15 @@ pipeline {
                 sh "APP_ENV=testing ./develop test"
             }
         }
+
+        stage('Package') {
+            when {
+                branch 'master'
+            }
+            steps {
+                sh './docker/build'
+            }
+        }
     }
 
     post {
