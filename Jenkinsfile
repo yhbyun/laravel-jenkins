@@ -1,12 +1,14 @@
 
 pipeline {
     agent any
+    /*
     parameters {
         string(defaultValue: 'master', description: 'branch', name: 'branch')
     }
     environment {
         GIT_BRANCH = "${params.branch}"
     }
+    */
 
     stages {
         stage('Build') {
@@ -34,7 +36,7 @@ pipeline {
 
         stage('Package') {
             when {
-                branch 'origin/master'
+                GIT_BRANCH 'origin/master'
             }
             steps {
                 sh './docker/build'
